@@ -1,8 +1,42 @@
 .nav_bar_list{
 list-style-type: none;
 padding: 0;
-margin: 0;
+margin: 30px;
+width: 100%;
+justify-content: space-between;
+align-items: center;
 }
 .nav_bar_link{
     display: inline;
+    padding: 14px 16px;
+    margin: 1;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    font-size: 25px;
+    color: yellow;
+    text-decoration: none;
+    border-radius: 0px;
+    border-right: grey;
+}
+.nav_bar_link_active{
+    font-size: 30px;
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    border-radius: 0px;
+    display: inline;
+    padding: 14px 16px;
+    margin: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_bar_link:hover{
+    font-size: 30px;
+    color: blue;
+    background-color: yellow;
+}
+.gallery1{
+    display: flex;
+    align-items: center;
 }
