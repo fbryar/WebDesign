@@ -40,3 +40,8 @@ align-items: center;
     display: flex;
     align-items: center;
 }
+.imageME{
+    border-radius: 25px;
+    border-color:#ddbea9 ;
+    border-width: 7px;
+}
