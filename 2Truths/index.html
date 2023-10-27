@@ -12,33 +12,56 @@
   <br>
   <form>
     <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
+    <input type="text" id="fname">
+    <input type="submit" value="new thing in value" onclick="hello()"><br>
     <label for="lname">Last name:</label><br>
     <input type="text" id="lname" name="lname"><br>
     <label for="aname">Age:</label><br>
     <input type="text" id="aname" name="aname"><br><br>
-    <input type="Submit" value="Submit" onclick="hello()">
   </form>
   <p id="answer"></p>
   <br>
   <hr>
   <br>
   <h3>Two Truths and a Lie</h3>
-  <form>
-    <input type="radio" id="statement1" name="2thruths&lie" value="Truth">
-    <label for="html">truth</label><br>
-    <input type="radio" id="statement2" name="2truths&lie" value="Truth">
-    <label for="css">lie</label><br>
-    <input type="radio" id="statement3" name="2thruths&lie" value="Lie">
-    <label for="javascript">truth</label><br>
-    <button type="submit">Submit</button>
+  <form id="2truths">
+    <input type="radio" id="statement1" name="2thruths&lie" value="truth">
+    <label for="statement1">truth</label><br>
+    <input type="radio" id="statement2" name="2truths&lie" value="truth">
+    <label for="statement1">truth</label><br>
+    <input type="radio" id="statement3" name="2thruths&lie" value="lie">
+    <label for="statement1">lie</label><br>
+    <button type="submit" onclick="checktruth()">Submit</button>
   </form>
   <script>
-    function hello() {
-      let name=getElementById('fname')
-      alert("hello")
+    function reveal() {
+      document.getElementById('secret').innerHTML = 'shhh';
+      getElementById('secret').style.display = 'block'
     }
 
+    function hello() {
+      let name = document.getElementById('fname').value;
+      alert("hello, " + name);
+    }
+
+    function checktruth() {
+      let answerTag = document.getElementById('answer')
+      if( document.getElementById('statement1').checked) {
+        answerTag.innerHTML = 'truth';
+        answerTag.style.color = "green";
+        answerTag.style.display = 'block';
+      }
+      if( document.getElementById('statement2').checked) {
+        answerTag.innerHTML = 'truth';
+        answerTag.style.color = "green";
+        answerTag.style.display = 'block';
+      }
+      if( document.getElementById('statement3').checked) {
+        answerTag.innerHTML = 'lie';
+        answerTag.style.color = "red";
+        answerTag.style.display = 'block';
+      }
+    }
 
   </script>
 
