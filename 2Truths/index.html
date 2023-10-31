@@ -12,26 +12,38 @@
   <br>
   <form>
     <label for="fname">First name:</label><br>
-    <input type="text" id="fname">
-    <input type="submit" value="new thing in value" onclick="hello()"><br>
+    <input type="text" id="fname"><br>
     <label for="lname">Last name:</label><br>
     <input type="text" id="lname" name="lname"><br>
     <label for="aname">Age:</label><br>
     <input type="text" id="aname" name="aname"><br><br>
+    <input type="submit" value="Submit" onclick="hello()"><br>
   </form>
   <p id="answer"></p>
   <br>
   <hr>
-  <br>
-  <h3>Two Truths and a Lie</h3>
+  <h2>Here are the 3 statements, find which one is the lie!</h2>
+  <p>Ok select the lie out of these three statements:</p>
   <form id="2truths">
-    <input type="radio" id="statement1" name="2thruths&lie" value="truth">
-    <label for="statement1">truth</label><br>
+    <input type="radio" id="statement1" name="2truths&lie" value="truth">
+    <label for="statement1">I used to own a pet frog</label><br>
     <input type="radio" id="statement2" name="2truths&lie" value="truth">
-    <label for="statement1">truth</label><br>
-    <input type="radio" id="statement3" name="2thruths&lie" value="lie">
-    <label for="statement1">lie</label><br>
-    <button type="submit" onclick="checktruth()">Submit</button>
+    <label for="statement2">I like cats more than dogs</label><br>
+    <input type="radio" id="statement3" name="2truths&lie" value="lie">
+    <label for="statement3">I have a dog</label><br><br>
+    <button type="button" onclick="checktruth()">Submit</button>
+  </form>
+  <br>
+  <hr>
+  <p>Want to go again? Select the lie:</p>
+  <form id="2truths">
+    <input type="radio" id="statement1" name="2truths&lie" value="truth">
+    <label for="statement1">I play ultimate frisbee</label><br>
+    <input type="radio" id="statement2" name="2truths&lie" value="truth">
+    <label for="statement2">I play soccer</label><br>
+    <input type="radio" id="statement3" name="2truths&lie" value="lie">
+    <label for="statement3">I play basketball</label><br><br>
+    <button type="button" onclick="checktruth()">Submit</button>
   </form>
   <script>
     function reveal() {
@@ -41,7 +53,8 @@
 
     function hello() {
       let name = document.getElementById('fname').value;
-      alert("hello, " + name);
+      let name2 = document.getElementById('lname').value;
+      alert("Hello, " + name + ' ' + name2);
     }
 
     function checktruth() {
