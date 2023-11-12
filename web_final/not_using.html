@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c980729f02.js" crossorigin="anonymous"></script>
+    <style>
+        .grid-container {
+            grid-gap: 5px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+        }
+
+        .grid-item {
+            background-color: lightblue;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        body {
+            font-family: "Adabi", sans-serif;
+        }
+
+        .sidenav {
+            padding-left: 0px;
+            float: left;
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-left: 20px;
+            border: 20px;
+            border-color: black;
+        }
+
+        .sidenav a,
+        .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            padding-bottom: 40px;
+            position: center;
+        }
+
+        .sidenav a:hover,
+        .dropdown-btn:hover {
+            color: black;
+            background-color: #D6F1FF;
+            border-radius: 5px;
+        }
+
+        .active {
+            background-color: #D6F1FF;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .dropdown-container {
+            display: none;
+            background-color: #EBF8FF;
+            padding-left: 8px;
+        }
+
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+
+        .topnav {
+            float: right;
+            padding-right: 60px;
+            padding-top: 25px;
+            position: sticky;
+        }
+
+        .topnav a {
+            text-decoration: none;
+            color: black;
+            background-color: #F6B833;
+            padding: 19px;
+            border-radius: 30px;
+            float: right;
+        }
+
+        .main1 {
+            grid-row: 1;
+            grid-column: 1 / span 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item topnav">
+            <a href="#">Donate Now!</a>
+        </div>
+        <div class="grid-item sidenav">
+            <img src="Images/Logo.png" style="width: 170px;">
+            <br>
+            <br>
+            <a href="#about"> <i class='fas fa-home' style="font-size: 25px; padding-right: 20px;"></i>Home</a>
+            <a href="#services"><i class='fas fa-pencil-alt'
+                    style="font-size: 25px; padding-right: 20px;"></i>Register</a>
+            <a href="#clients"><i class='far fa-calendar-check'
+                    style="font-size: 25px; padding-right: 20px;"></i>Events</a>
+            <a href="#contact"><i class='fas fa-money-bill' style="font-size: 25px; padding-right: 20px;"></i>Donate</a>
+            <button class="dropdown-btn"><i class='fas fa-info' style="font-size: 25px; padding-right: 20px;"></i>About
+                Us
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Mission & Vision</a>
+                <a href="#">Our History</a>
+                <a href="#">Commitment to Equity</a>
+                <a href="#">Youth Programs</a>
+                <a href="#">Partners & Support</a>
+            </div>
+            <button class="dropdown-btn"><i class='fas fa-portrait'
+                    style="font-size: 25px; padding-right: 20px;"></i>Our
+                Team
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Our Team</a>
+                <a href="#">Teaching Artists</a>
+                <a href="#">Staff</a>
+            </div>
+        </div>
+        <div class="grid-item main1">
+            <center>
+                <hr>
+                <h1>Coyote Central Classes</h1>
+                <p>Studio Coyote is built just for 10-15-year-olds and runs year-round, following Seattle Public
+                    Schools’ schedule. During the winter, spring, and fall you’ll find an abundance of 20-hour weekend
+                    sessions as well as weeklong sessions over breaks. Summer is packed full of weekly, 20-hour courses
+                    and runs from June - August. </p>
+                <h2>All Studio Courses are Pay What-You-Can!</h2>
+                <br>
+                <hr style="width: 800px;">
+                <br>
+                <h1>REGISTER FOR WINTER BREAK!</h1>
+                <h5>Browse classes and register below!</h5>
+                <br>
+                <a href="https://campscui.active.com/orgs/CoyoteCentral?e4q=5b560b42-485d-48e4-b69a-2ef188acd702&e4p=d9d99d19-9593-4c3c-892c-fd98ca9fbb4f&e4ts=1699423619&e4c=active&e4e=snlvcmpscui00001load&e4rt=Safetynet&e4h=d4eb3530dded1981fe13ad37604a0b54#/selectSessions/3383938"
+                    style="text-decoration: none; color: black; background-color: #F6B833; padding: 19px; border-radius: 3px;">REGISTER NOW</a>
+                <br>
+                <br>
+                <br>
+                    <img src="Images/schedule.png" style="width: 800px;">
+                </center>
+    </div>
+    </div>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
